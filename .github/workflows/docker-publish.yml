@@ -24,7 +24,7 @@ jobs:
           context: ./accommodation-app-backend
           file: ./accommodation-app-backend/Dockerfile
           push: true
-          tags: vlatko/accommodation-app-backend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/accommodation-app-frontend:latest
 
 
       - name: Build and push frontend image
@@ -33,4 +33,4 @@ jobs:
           context: ./accommodation-app-frontend
           file: ./accommodation-app-frontend/Dockerfile
           push: true
-          tags: vlatko/accommodation-app-backend:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/accommodation-app-frontend:latest
