@@ -15,6 +15,7 @@ public class Accommodation {
     Long id;
 
     String name;
+    //asdasdsakpdoasad prboa
 
     @Enumerated(EnumType.STRING)
     Category category;
