@@ -16,6 +16,7 @@ public class Accommodation {
 
     String name;
     //asdasdsakpdoasad prboa
+    //proba pak
 
     @Enumerated(EnumType.STRING)
     Category category;
