@@ -21,8 +21,8 @@ jobs:
       - name: Build and push backend image
         uses: docker/build-push-action@v4
         with:
-          context: ./accommodation-app-backend
-          file: ./accommodation-app-backend/Dockerfile
+          context: ./Accommodation-app-backend
+          file: ./Accommodation-app-backend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/accommodation-app-frontend:latest
 
