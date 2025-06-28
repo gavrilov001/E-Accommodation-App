@@ -3,6 +3,12 @@
       build: ./Accommodation-App-backend
       ports:
         - 9090:9090
+      environment:
+        DB_HOST: ${DB_HOST}
+        DB_PORT: ${DB_PORT}
+        DB_NAME: ${DB_NAME}
+        DB_USERNAME: ${DB_USERNAME}
+        DB_PASSWORD: ${DB_PASSWORD}
       depends_on:
         - db
     frontend:
@@ -15,15 +21,15 @@
       image: postgres:17.4
       restart: always
       environment:
-        POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: admin
-        POSTGRES_DB: accommodations
+        POSTGRES_USER: ${DB_USERNAME}
+        POSTGRES_PASSWORD: ${DB_PASSWORD}
+        POSTGRES_DB: ${DB_NAME}
       volumes:
         - emt-lab-b_pgdata:/var/lib/postgresql/data
         - ./Accommodation-App-backend/init.sql:/docker-entrypoint-initdb.d/init.sql
         - ./Accommodation-App-backend/views.sql:/docker-entrypoint-initdb.d/views.sql
       ports:
-        - 2345:5432
+        - 5433:5432
 
   volumes:
     emt-lab-b_pgdata:

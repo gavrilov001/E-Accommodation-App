@@ -12,10 +12,20 @@
         </processorPath>
         <module name="Accommodation-app-backend" />
       </profile>
+      <profile name="Annotation profile for Accommodation-App-backend" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
+        </processorPath>
+        <module name="Accommodation-App-backend" />
+      </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Accommodation-App-backend" options="-parameters" />
       <module name="Accommodation-app-backend" options="-parameters" />
     </option>
   </component>
